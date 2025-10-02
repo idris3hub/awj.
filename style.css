@@ -1,0 +1,317 @@
+:root {
+    --primary-color: #007EC6;
+    --secondary-color: #00ADEF;
+    --dark-color: #132869;
+    --light-color: #DDB294;
+    --bg-accent: #132869;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+.section-padding {
+    padding: 6rem 0; /* Reduced padding for a tighter design */
+}
+.text-container-md {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bg-dark-section {
+    background-color: var(--dark-color);
+    color: white;
+}
+.bg-accent-section {
+    background-color: var(--bg-accent);
+}
+.btn-lang {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Rounded pill shape */
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+.btn-lang:hover {
+    transform: scale(1.1);
+}
+.navbar {
+    /* Smooth transition for background color and shadow */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+/* Style for the navbar when scrolled */
+.navbar.scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Replicates Bootstrap's .shadow-sm */
+}
+.navbar-brand .logo-icon {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+.navbar-brand img {
+    max-height: 40px; /* Adjust logo size to fit navbar */
+}
+.nav-link {
+    transition: color 0.3s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--secondary-color);
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    font-weight: 600; /* Make active link slightly bolder */
+}
+.card {
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Apply a hover effect to all cards, except for the ones in the services section */
+.card:not(#services .card):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.card-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+}
+/* Removed .text-justify for better readability, browser default (left/start) is better */
+
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 10rem 0;
+}
+
+/* Disable parallax on mobile for performance and usability */
+@media (max-width: 991.98px) {
+    .parallax-section {
+        background-attachment: scroll;
+    }
+}
+
+#hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./about1.png');
+}
+#vision {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./awj1.jpg');
+}
+#purpose {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./awj5.png');
+}
+#our-commitment {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./awj6.png');
+}
+#compliance {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./awj3.png');
+}
+
+/* Make section titles stand out on light backgrounds */
+.section-padding:not(.bg-dark-section) h1,
+.section-padding:not(.bg-dark-section) h2 {
+    color: var(--primary-color);
+}
+.text-primary-accent {
+    color: var(--primary-color);
+}
+.list-icon {
+    color: var(--secondary-color);
+}
+.contact-form-card {
+    background-color: var(--light-color);
+}
+
+.form-control {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 126, 198, 0.25);
+}
+.form-control {
+    border-radius: 0.75rem;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0.75rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+.bg-light-section {
+    background-color: var(--light-color);
+}
+
+/* --- Hero Section Button Customization --- */
+#hero .btn-primary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+.certificate-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.1); /* Initially zoom in the image */
+    transition: transform 0.4s ease;
+}
+
+.certificate-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 3px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+.certificate-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-container:hover .certificate-img {
+    transform: scale(1); /* Zoom out to original size on hover */
+}
+
+/* --- Flip Card Effect for Services --- */
+#services .card-container {
+    perspective: 1000px; /* 3D space for the flip */
+    min-height: 250px; /* Ensure consistent height for flipping */
+}
+
+#services .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    /* Remove default card hover effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+#services .card:hover {
+    transform: rotateY(180deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Keep shadow effect on hover */
+}
+
+#services .card-front,
+#services .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1.5rem; /* Match the card's border-radius */
+}
+
+#services .card-front {
+    background-color: #fff; /* Card front background */
+}
+
+#services .card-back {
+    background-color: var(--dark-color); /* Card back background */
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* --- Scroll Animation --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Preloader Spinner --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.aircraft-spinner {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Back to Top Button --- */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1030; /* High z-index to stay on top */
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+#back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
